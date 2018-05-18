@@ -73,6 +73,27 @@ module.exports = {
         })
       },
       {
+        test: /\.(css)$/,
+        include: path.resolve(__dirname, 'src/css'),
+        use: ExtractTextPlugin.extract({
+          use: [{
+              loader: 'css-loader',
+              options: {
+                sourceMap: true,
+                minimize: true,
+                url: false
+              }
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                sourceMap: true
+              }
+            }
+          ]
+        })
+      },
+      {
         test: /\.html$/,
         include: path.resolve(__dirname, 'src/html/includes'),
         use: ['raw-loader']
