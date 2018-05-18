@@ -2,10 +2,12 @@
   title: "Project Title"
 }; %>
 <%= _.template(require('../includes/header.html'))(data) %>
+<section class="main-container business">
+    <%= _.template(require('../includes/nav.html'))(data) %>
+</section>
 <div id="svg-sprites"></div>
 <main class="main">
   <h1>It Works!</h1>
   <svg><use xlink:href="#test-svg"></use></svg>
 </main>
-
 <%= _.template(require('../includes/footer.html'))(data) %>

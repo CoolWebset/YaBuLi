@@ -37,10 +37,10 @@ select::-ms-expand {
   display: none;
 }
 
-label, 
+label,
 button,
-select { 
-  cursor: pointer; 
+select {
+  cursor: pointer;
 }
 
 html {
@@ -61,8 +61,14 @@ body {
   min-width: 320px;
   margin: 0 auto;
   position: relative;
+  max-width: 1440px;
 }
-
+.main-container {
+    width: 100%;
+    position: relative;
+    top: 0;
+    float: left;
+}
 .page__layout {
   height: auto;
   min-height: 100vh;
@@ -104,4 +110,9 @@ h6 {
 
 ::selection {
   background-color: lighten(rgba(#000, 0.2), 10) !important;
+}
+.container {
+    max-width: 80%;
+    margin: 0 auto;
+    position: relative;
 }

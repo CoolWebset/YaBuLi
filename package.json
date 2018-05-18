@@ -10,10 +10,15 @@
     "postbuild": "html dist/*.html --indent-size 2"
   },
   "dependencies": {
+    "bootstrap": "^4.1.1",
+    "css-loader": "^0.28.11",
     "jquery": "^3.3.1",
     "normalize.css": "^8.0.0",
     "object-fit-images": "^3.2.3",
-    "picturefill": "^3.0.2"
+    "picturefill": "^3.0.2",
+    "style-loader": "^0.21.0",
+    "url": "^0.11.0",
+    "url-loader": "^1.0.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -36,6 +41,7 @@
     "html-cli": "^1.0.0",
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.8.3",
+    "popper.js": "^1.14.3",
     "postcss-import": "^11.1.0",
     "postcss-load-config": "^1.2.0",
     "postcss-loader": "^2.1.3",
