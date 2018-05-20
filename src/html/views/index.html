@@ -1,13 +1,112 @@
 <% var data = {
   title: "Project Title"
 }; %>
-<%= _.template(require('../includes/header.html'))(data) %>
-<section class="main-container business">
-    <%= _.template(require('../includes/nav.html'))(data) %>
-</section>
-<div id="svg-sprites"></div>
-<main class="main">
-  <h1>It Works!</h1>
-  <svg><use xlink:href="#test-svg"></use></svg>
-</main>
-<%= _.template(require('../includes/footer.html'))(data) %>
+  <%= _.template(require('../includes/header.html'))(data) %>
+    <section class="main-container business">
+      <%= _.template(require('../includes/nav.html'))(data) %>
+        <div class="i_ban">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="../img/ban1.jpg" alt=""></div>
+          </div>
+          <!-- Add Pagination -->
+          <div class="swiper-pagination"></div>
+        </div>
+        <div class="container">
+          <div class="row i_about">
+            <div class="col-md-12">
+              <div class="i_about_by">
+                <img src="../img/w1.png" alt="">
+              </div>
+              <h2>亚布力广电国际酒店</h2>
+              <p>
+                酒店位于海拔500米依山而建，推窗即景，是景区内海拔<br> 最高的五星级酒店。酒店大堂面积1000米 ，举架高14米，是目前黑龙江省内面积最大的。<br> 大堂前后完全采用了玻璃幕墙式设计，大大提高了大堂的采光度和通透度，置身于大堂之中，便可尽赏
+                <br> 亚布力的崇山峻岭，雪道跳台亦尽收眼底。
+                <br>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="container-fluid">
+          <div class="row i_cp">
+            <div class="col-xs-12 col-sm-4 reset-pad">
+              <div class="explore-hotel-type-tile">
+                <div class="content">
+                  <div class="tile-image" style="background: none;">
+                    <img class="lazyload" src="../img/cp1.jpg" alt="遇见你的洲际人生">
+                  </div>
+                  <div class="tile-desc" null="">
+                    <div class="tile-header">
+                      遇见你的洲际人生</div>
+                    <div class="desc-overlay" style="margin-top: -130px; display: none;">
+                      <div class="desc">
+                        <p>
+                          在洲际，开启一次全方位感知的旅程<br>
+                        </p>
+                      </div>
+                      <div class="link">
+                        <a class="" href="//www.ihg.com/intercontinental/content/cn/zh/explore/theintercontinentallife?cm_sp=OSMAM-IC-GB-EN-HMM1-AIX-MAN-Explore_InterConinentalLife">查看相册</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-xs-12 col-sm-4 reset-pad">
+              <div class="explore-hotel-type-tile">
+                <div class="content">
+                  <div class="tile-image" style="background: none;">
+                    <img class="lazyload" src="../img/cp2.jpg" alt="遇见你的洲际人生">
+                  </div>
+                  <div class="tile-desc" null="">
+                    <div class="tile-header">
+                      遇见你的洲际人生</div>
+                    <div class="desc-overlay" style="margin-top: -130px; display: none;">
+                      <div class="desc">
+                        <p>
+                          在洲际，开启一次全方位感知的旅程<br>
+                        </p>
+                      </div>
+                      <div class="link">
+                        <a class="" href="//www.ihg.com/intercontinental/content/cn/zh/explore/theintercontinentallife?cm_sp=OSMAM-IC-GB-EN-HMM1-AIX-MAN-Explore_InterConinentalLife">查看相册</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-4 reset-pad">
+              <div class="explore-hotel-type-tile">
+                <div class="content">
+                  <div class="tile-image" style="background: none;">
+                    <img class="lazyload" src="../img/cp3.jpg" alt="遇见你的洲际人生">
+                  </div>
+                  <div class="tile-desc" null="">
+                    <div class="tile-header">
+                      遇见你的洲际人生</div>
+                    <div class="desc-overlay" style="margin-top: -130px; display: none;">
+                      <div class="desc">
+                        <p>
+                          在洲际，开启一次全方位感知的旅程<br>
+                        </p>
+                      </div>
+                      <div class="link">
+                        <a class="" href="//www.ihg.com/intercontinental/content/cn/zh/explore/theintercontinentallife?cm_sp=OSMAM-IC-GB-EN-HMM1-AIX-MAN-Explore_InterConinentalLife">查看相册</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <div id="svg-sprites"></div>
+    <main class="main">
+      <h1>It Works!</h1>
+      <svg><use xlink:href="#test-svg"></use></svg>
+    </main>
+    <%= _.template(require('../includes/footer.html'))(data) %>

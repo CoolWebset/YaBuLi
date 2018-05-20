@@ -13,3 +13,46 @@
     }
   }
 }
+header{
+  background: #212430;
+  width: 100%;
+  padding: 20px 0 20px 0 ;
+  .logo{
+    img{
+      width: 35%;
+      display: block;
+    }
+  }
+  .nav_b{
+    height: 100%;
+    position: relative;
+    .nav{
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      li{
+        a{
+          color: #fff;
+          border-radius: 0;
+          padding: 5px 10px;
+        }
+        &:hover{
+          a{
+            color: #e4c298;
+            background: none;
+          }
+        }
+      }
+    }
+  }
+  .yd_b{
+    position: relative;
+    button{
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      background:#e4c298;
+      color:#212430;
+    }
+  }
+}

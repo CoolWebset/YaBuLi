@@ -62,6 +62,7 @@ body {
   margin: 0 auto;
   position: relative;
   max-width: 1440px;
+  font-family:"Microsoft YaHei";
 }
 .main-container {
     width: 100%;
@@ -111,7 +112,7 @@ h6 {
 ::selection {
   background-color: lighten(rgba(#000, 0.2), 10) !important;
 }
-.container {
+.container1 {
     max-width: 80%;
     margin: 0 auto;
     position: relative;
