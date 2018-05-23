@@ -1,4 +1,4 @@
-const path = require('path'); 
+const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -26,7 +26,7 @@ function generateHtmlPlugins(templateDir) {
 const htmlPlugins = generateHtmlPlugins('./src/html/views');
 
 module.exports = {
-  entry: ['./src/js/index.js', './src/js/index2.js', './src/scss/style.scss'],
+  entry: ['./src/js/index.js', './src/scss/style.scss'],
   output: {
     filename: './js/bundle.js'
   },
