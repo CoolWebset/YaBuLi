@@ -1,58 +1,226 @@
-.top{
-  width:100%;
-  background:#3e3d3e;
-  height:35px;
+$nav-height: (
+  null : (height: 40px),
+  720px: (height: 50px),
+  m1200: (height: 60px),
+  m1440: (height: 70px),
+  m1920: (height: 80px)
+);
+$nav-height2: (
+  null : (height: 40px),
+  720px: (height: 41px),
+  m1200: (height: 60px),
+  m1440: (height: 70px),
+  m1920: (height: 80px)
+);
+$height-padding: (
+  null : (padding : 10px 0),
+  720px: (padding : 10px 0),
+  m1200: (padding : 20px 0),
+  m1440: (padding : 20px 0),
+  m1920: (padding : 20px 0)
+);
+$label-margin: (
+  null : (margin : 10px 8px),
+  720px: (margin : 15px 8px),
+  m1024: (margin : 15px 8px)
+);
+$nav-top: (
+  null : (top: 61px),
+  720px: (top: 71px),
+  m1200: (top: 0px),
+);
+
+.top {
+  width      : 100%;
+  max-width  : 1440px;
+  background : #3e3d3e;
+  height     : 35px;
   line-height: 35px;
-  p{
-    font-size: 14px;
-    color: #fff;
-    text-align: right;
-    a{
-      color: #fff;
-      margin:0 5px;
+  position   : fixed;
+  top        : 0;
+  z-index    : 99;
+
+  p {
+    font-size    : 14px;
+    color        : #fff;
+    text-align   : right;
+    margin-bottom: 0;
+
+    a {
+      color : #fff;
+      margin: 0 5px;
     }
   }
 }
-header{
+
+#myInput {
+  display: none;
+}
+
+header {
   background: #212430;
-  width: 100%;
-  padding: 20px 0 20px 0 ;
-  .logo{
-    img{
-      width: 35%;
+  width     : 100%;
+  max-width : 1440px;
+  position  : fixed;
+  z-index   : 99;
+  top       : 35px;
+  @include css-set($height-padding);
+
+  .logo {
+    img {
+      @include css-set($nav-height);
       display: block;
     }
   }
-  .nav_b{
-    height: 100%;
+
+  .nav_b {
+    height  : inherit;
     position: relative;
-    .nav{
+    @include css-set($nav-height2);
+
+    .nav {
       position: absolute;
-      right: 0;
-      bottom: 0;
-      li{
-        a{
-          color: #fff;
+      right   : 0;
+      bottom  : 0;
+
+      li {
+        a {
+          color        : #fff;
           border-radius: 0;
-          padding: 5px 10px;
+          padding      : 5px 10px;
         }
-        &:hover{
-          a{
-            color: #e4c298;
+
+        &:hover {
+          a {
+            color     : #e4c298;
             background: none;
           }
         }
       }
     }
   }
-  .yd_b{
-    position: relative;
-    button{
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      background:#e4c298;
-      color:#212430;
+
+  .yd_b {
+    position    : relative;
+    margin-right: 0;
+    @include css-set($nav-height2);
+
+    button {
+      position  : absolute;
+      right     : 0;
+      bottom    : 0;
+      background: #e4c298;
+      color     : #212430;
     }
+  }
+}
+
+#myInput:checked ~ header label.myInput .bar:nth-of-type(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+#myInput:checked ~ header label.myInput .bar:nth-of-type(2) {
+  transform : translateX(100px);
+  transition: 0.4s;
+}
+
+#myInput:checked ~ header label.myInput .bar:nth-of-type(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+@include max-screen(1024px) {
+  header {
+    box-shadow: 0 0 2px #212430;
+    top       : 0;
+
+    .yd_b {
+      float       : right;
+      margin-right: 15px;
+    }
+  }
+}
+@include max-screen(720px) {
+  #myInput:checked ~ header {
+    border-bottom: 1px solid #b09b48;
+  }
+
+  header {
+    box-shadow: 0 0 2px #212430;
+
+    .nav_b {
+      position        : fixed;
+      background-color: #212430;
+      width           : 100%;
+      height          : auto;
+      display         : none;
+      @include css-set($nav-top);
+
+      .nav.nav-pills {
+        width   : 100%;
+        padding : 15px 0;
+        position: relative;
+
+        li {
+          width: 100%;
+          float: none;
+        }
+      }
+    }
+
+    .yd_b {
+      display: none;
+    }
+
+    label.myInput {
+      display         : inline-block;
+      width           : 40px;
+      height          : 40px;
+      background-color: transparent;
+      cursor          : pointer;
+      z-index         : 100;
+      position        : fixed;
+      right           : 0;
+      top             : 0;
+      transition      : $tr4;
+      overflow        : hidden;
+      @include css-set($label-margin);
+
+      .menu {
+        margin-top: 10px;
+
+        &::after {
+          content              : "";
+          width                : 90%;
+          height               : 90%;
+          left                 : 0;
+          top                  : 0;
+          position             : absolute;
+          border               : 2px solid transparent;
+          -moz-border-radius   : 100%;
+          -webkit-border-radius: 100%;
+          border-radius        : 100%;
+        }
+
+        .bar {
+          height               : 3px;
+          width                : 25px;
+          border-radius        : 5px;
+          margin               : 5px auto;
+          display              : block;
+          position             : relative;
+          background-color     : #b09b48;
+          -moz-border-radius   : 5px;
+          -webkit-border-radius: 5px;
+          border-radius        : 5px;
+          -moz-transition      : 0.4s;
+          -o-transition        : 0.4s;
+          -webkit-transition   : 0.4s;
+          transition           : 0.4s;
+        }
+      }
+    }
+  }
+
+  #myInput:checked ~ header .nav_b {
+    display: block;
   }
 }

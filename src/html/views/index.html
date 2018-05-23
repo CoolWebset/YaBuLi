@@ -1,9 +1,9 @@
 <% var data = {
-  title: "Project Title"
+  title: "首页"
 }; %>
-  <%= _.template(require('../includes/header.html'))(data) %>
+<%= _.template(require('../includes/header.html'))(data) %>
+  <%= _.template(require('../includes/nav.html'))(data) %>
     <section class="main-container business">
-      <%= _.template(require('../includes/nav.html'))(data) %>
         <div class="i_ban">
           <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="../img/ban1.jpg" alt=""></div>
