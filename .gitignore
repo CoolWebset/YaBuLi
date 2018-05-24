@@ -1,6 +1,6 @@
 _files
-dist
- 
+#dist
+
 # Logs
 logs
 *.log

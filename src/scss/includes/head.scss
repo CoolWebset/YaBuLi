@@ -88,10 +88,9 @@ header {
           color        : #fff;
           border-radius: 0;
           padding      : 5px 10px;
-        }
 
-        &:hover {
-          a {
+          &:focus,
+          &:hover {
             color     : #e4c298;
             background: none;
           }
