@@ -10,8 +10,47 @@ footer {
   .footer-main {
     background-color: #222431;
 
+    .footer-content {
+      color   : #fff;
+      padding : 30px 0;
+      overflow: hidden;
+
+      .left {
+        .wechat {
+          span {
+            color           : #62b900;
+            background-color: #fff;
+            padding         : 10px;
+          }
+        }
+      }
+
+      .right {
+        border-left: 1px solid #3e424b;
+
+        .nav {
+          text-align: center;
+
+          a {
+            color  : #fff;
+            display: block;
+            padding: 5px 0;
+          }
+        }
+
+        .address {
+          table {
+            tbody {
+              vertical-align: top;
+            }
+          }
+        }
+      }
+    }
+
     .footer-logo {
       text-align: center;
+      border-top: 1px solid #3e424b;
 
       img {
         display    : inline-block;
