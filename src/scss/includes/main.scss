@@ -5,7 +5,9 @@ h1 {
 article,
 main,
 section {
-  display: block;
+  display : block;
+  position: relative;
+  z-index : 1;
 }
 
 .text-hidden {
@@ -15,6 +17,7 @@ section {
   text-overflow: ellipsis;
 }
 /*水平垂直居中*/
+
 .wh-center {
   display            : -webkit-box;
   display            : -ms-flexbox;
@@ -29,6 +32,7 @@ section {
   align-items        : center;
 }
 /*垂直居中*/
+
 .h-center {
   display            : -webkit-box;
   display            : -ms-flexbox;
@@ -40,6 +44,7 @@ section {
   align-items        : center;
 }
 /*分组父级*/
+
 .felx-box {
   display              : -webkit-box;
   -webkit-box-orient   : horizontal;
@@ -51,6 +56,7 @@ section {
   align-items          : left;
 }
 /*分组子级*/
+
 .felx-item {
   -webkit-box-flex: 1;
   flex-basis      : 1;
@@ -59,6 +65,7 @@ section {
   flex            : 1 1 1;
 }
 /* alert_player */
+
 .alert_player {
   position: fixed;
   top     : 0;
