@@ -105,7 +105,7 @@ header {
     margin-right: 0;
     @include css-set($nav-height2);
 
-    button {
+    a {
       position  : absolute;
       right     : 0;
       bottom    : 0;
