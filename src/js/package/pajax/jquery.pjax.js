@@ -641,7 +641,6 @@ function optionsFor(container, options) {
 // Returns a jQuery object whose context is `document` and has a selector.
 function findContainerFor(container) {
   container = $(container)
-
   if ( !container.length ) {
     throw "no pjax container for " + container.selector
   } else if ( container.selector !== '' && container.context === document ) {

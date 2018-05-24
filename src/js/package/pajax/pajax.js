@@ -14,7 +14,7 @@ const pageajax = (article, start, callbak) => {
       var container = $(this).attr("data-container");
       var fragment = $(this).attr("data-fragment");
       var istop = $(this).attr('data-istop');
-      const targetelement = $(this).attr('data-target');
+      var targetelement = $(this).attr('data-target');
       if(!url){
         alertinfo.initModule('网站维护中...')
       }
@@ -29,12 +29,13 @@ const pageajax = (article, start, callbak) => {
       } else {
         fragment = article;
       }
-      console.log(container);
+
       $('.pjaxcontainer').removeClass('pjaxcontainer');
       $(container).addClass('pjaxcontainer');
       $(container).stop().animate({
         opacity: "1"
       }, 0);
+      console.log(container);
       setTimeout(function() {
         $.pjax({
           url: url,
