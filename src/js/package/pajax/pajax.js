@@ -29,6 +29,7 @@ const pageajax = (article, start, callbak) => {
       } else {
         fragment = article;
       }
+      console.log(container);
       $('.pjaxcontainer').removeClass('pjaxcontainer');
       $(container).addClass('pjaxcontainer');
       $(container).stop().animate({
