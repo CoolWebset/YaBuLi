@@ -5,16 +5,21 @@ import pjax from './jquery.pjax'
  * pajax 页面无刷新
  * @return {[type]} [description]
  */
-const pageajax = (article, start, callbak) => {
+ var url = '';
+ var container = '';
+ var fragment = '';
+ var istop = '';
+ var targetelement = '';
+var pageajax = (article, start, callbak) => {
   if ($.support.pjax) {
     $('body').stop().undelegate('a[data-ajax!=no]', 'click');
     $('body').stop().delegate('a[data-ajax!=no]', 'click', function(event) {
       event.preventDefault();
-      var url = $(this).attr("href");
-      var container = $(this).attr("data-container");
-      var fragment = $(this).attr("data-fragment");
-      var istop = $(this).attr('data-istop');
-      var targetelement = $(this).attr('data-target');
+      url = $(this).attr("href");
+      container = $(this).attr("data-container");
+      fragment = $(this).attr("data-fragment");
+      istop = $(this).attr('data-istop');
+      targetelement = $(this).attr('data-target');
       if(!url){
         alertinfo.initModule('网站维护中...')
       }
@@ -35,7 +40,7 @@ const pageajax = (article, start, callbak) => {
       $(container).stop().animate({
         opacity: "1"
       }, 0);
-      console.log(container);
+
       setTimeout(function() {
         $.pjax({
           url: url,
@@ -92,14 +97,19 @@ const pageajax = (article, start, callbak) => {
       $('.pjaxcontainer').stop().animate({
         opacity: "1"
       }, 300);
-      //console.log(xhr.container);
-      if (xhr.container != 'main') {
-        callbak(targetelement, true);
-      } else {
-        callbak(targetelement, false);
+      if("undefined" != typeof targetelement){
+        if (xhr.container != 'main') {
+          callbak(targetelement, true);
+        } else {
+          callbak(targetelement, false);
+        }
+      }else{
+        if (xhr.container != 'main') {
+          callbak('', true);
+        } else {
+          callbak('', false);
+        }
       }
-
-
       //$('title').text(data.relatedTarget.innerText + ' - 润泰');
     });
     $(document).on('pjax:error', function() {

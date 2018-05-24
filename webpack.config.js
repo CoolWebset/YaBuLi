@@ -145,7 +145,9 @@ module.exports = {
       $: 'jquery',
       jQuery: 'jquery',
       'window.jQuery': 'jquery',
-      'window.$': 'jquery'
+      'window.$': 'jquery',
+      // Swiper:'swiper',
+      // 'window.Swiper': 'swiper',
     })
   ].concat(htmlPlugins),
   devServer: {

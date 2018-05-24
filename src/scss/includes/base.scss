@@ -78,7 +78,6 @@ body {
   width   : 100%;
   position: relative;
   top     : 0;
-  float   : left;
   @include css-set($main-padding);
 }
 
@@ -121,6 +120,56 @@ h6 {
 
 ::selection {
   background-color: lighten(rgba(#000, 0.2), 10) !important;
+}
+
+#progress {
+  position  : fixed;
+  height    : 2px;
+  top       : 0;
+  background: #3e3d3e;
+  transition: opacity 500ms linear;
+  z-index   : 99999999;
+  display   : none;
+
+  &.done {
+    opacity: 0;
+  }
+
+  span {
+    position         : absolute;
+    height           : 2px;
+    // background       : #3e3d3e;
+    box-shadow       : #3e3d3e 1px 0 6px 1px;
+    border-radius    : 100%;
+    opacity          : 1;
+    width            : 150px;
+    right            : -10px;
+    -webkit-animation: pulse 4s ease-out 0s infinite;
+  }
+}
+@-webkit-keyframes pulse {
+  30% {
+    opacity: 0.6;
+  }
+
+  60% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0.6;
+  }
+}
+
+.loadmore {
+  text-align : center;
+  background : #c8a46c;
+  color      : #fff;
+  line-height: 3em;
+
+  span {
+    padding-right: 10px;
+  }
 }
 
 .container1 {

@@ -1,0 +1,22 @@
+footer {
+  .footer-bar {
+    height          : 40px;
+    line-height     : 40px;
+    background-color: #c1c1c1;
+    color           : #fff;
+    font-size       : 12px;
+  }
+
+  .footer-main {
+    background-color: #222431;
+
+    .footer-logo {
+      text-align: center;
+
+      img {
+        display    : inline-block;
+        line-height: 0;
+      }
+    }
+  }
+}

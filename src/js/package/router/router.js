@@ -30,9 +30,9 @@ const backtotop = () => {
  * @param  {[type]} i [description]
  * @return {[type]}   [description]
  */
-const navactive = (i) => {
-  $('nav a').removeClass('on');
-  $('nav a').eq(i).addClass('on');
+var navactive = (i) => {
+  $('nav ul li').find('a').removeClass('on');
+  $('nav ul li').eq(i).find('a').addClass('on');
   if ($(window).width() < 980) {
     $('nav a').click(function() {
       $('#myInput').attr('checked', false);
@@ -90,8 +90,8 @@ const sub_nav = (i) => {
 const routerset = (article, state) => {
   const actionName = $(article).attr('data-main');
   const eractionName = $('.eractionName').attr('data-fun');
-  //console.log(actionName);
-  //console.log(eractionName);
+  // console.log(actionName);
+  // console.log(eractionName);
   // 判断主actionName
   if (actionName) {
     //判断主二级actionName
@@ -99,7 +99,7 @@ const routerset = (article, state) => {
       //判断是否无刷新
       if (state && localStorage.mainactionName && localStorage.mainactionName == actionName) {
         const action = require(`../../page/${actionName}`)
-        var str = "action.default." + eractionName + "(function(a){sub_nav(a);})";
+        var str = "action.default." + eractionName + "(function(a){navactive(a);sub_nav(a);})";
         eval(str);
       } else {
         localStorage.mainactionName = actionName;
@@ -115,7 +115,7 @@ const routerset = (article, state) => {
       const action = require(`../../page/${actionName}`)
       action.default.init(function(a) {
         navactive(a);
-        sub_nav();
+        // sub_nav();
       });
     }
 

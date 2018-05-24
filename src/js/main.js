@@ -126,11 +126,12 @@ const init = () => {
   pajax.init('main', function() {}, function(targetelement, state) {
       router.init('article', false);
       if (targetelement) {
-        //console.log(targetelement);
+        console.log(targetelement);
         setTimeout(function() {
           //console.log($('#' + targetelement).offset().top);
+          console.log($('.top').height());
           $.smoothScroll({
-            offset: -($('header').height()),
+            offset: -($('header').outerHeight()+$('.top').outerHeight()+20),
             speed: 500,
             scrollTarget: '#' + targetelement
           });
