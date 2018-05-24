@@ -1,6 +1,7 @@
 $main-padding: (
   null : (padding: 60px 0 0),
-  m1200: (padding: 95px 0 0),
+  m1024: (padding: 105px 0 0),
+  m1200: (padding: 135px 0 0),
 );
 
 * {
@@ -78,6 +79,9 @@ body {
   width   : 100%;
   position: relative;
   top     : 0;
+}
+
+article {
   @include css-set($main-padding);
 }
 
@@ -188,6 +192,14 @@ h6 {
 
 .pc {
   display: block;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
 }
 
 .wap {

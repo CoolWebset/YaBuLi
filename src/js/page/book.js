@@ -2,13 +2,12 @@ import debug from '../package/debug/debug'
 
 
 const init = (callback) => {
-  console.log(callback);
   callback(2)
-  debug('index2 is load');
+  debug('book is load');
 };
 
-const index = {
+const book = {
   init: init
 };
 
-export default index;
+export default book;
