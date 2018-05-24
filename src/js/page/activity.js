@@ -1,7 +1,5 @@
 import debug from '../package/debug/debug'
 import Swiper from 'swiper';
-
-
 const banner = () => {
   var bannerSwiper = new Swiper('.i_ban.swiper-container', {
     pagination: {
