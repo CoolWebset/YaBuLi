@@ -16,11 +16,16 @@
     height             : 100%;
     position           : absolute;
     left               : 0;
+    overflow           : hidden;
+    padding            : 0;
 
     .bg {
       width     : 100%;
       visibility: hidden;
+      position  : absolute!important;
       opacity   : 0;
+      padding   : 0;
+      left      : 0px!important;
       transition: all 0.6s,transform 0.6s;
 
       &.active {
@@ -28,6 +33,13 @@
         opacity   : 1;
         transition: all 0.6s,transform 0.6s;
       }
+    }
+    @include min-screen(768px) {
+      left: 15px;
+    }
+    @include max-screen(767px) {
+      position: relative;
+      height  : 350px;
     }
   }
 
@@ -40,8 +52,16 @@
     .book-nav {
       font-size: 24px;
       // margin-top: calc(5% + 15px);
-      .nav-tabs a {
-        color: #555;
+      .nav-tabs {
+        li {
+          a {
+            color: #555;
+          }
+          @include max-screen(768px) {
+            float: left;
+            width: 50%;
+          }
+        }
       }
 
       .nav-tabs.nav-justified > .active > a,
@@ -99,6 +119,12 @@
           input {
             width: 100%;
           }
+          @include max-screen(768px) {
+            width: 100%;
+          }
+        }
+        @include max-screen(768px) {
+          margin-bottom: 0;
         }
       }
     }
