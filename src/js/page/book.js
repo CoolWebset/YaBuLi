@@ -8,20 +8,24 @@ const timeselect = () => {
 		var checkin = $('#intime').fdatepicker({
 			onRender: function (date) {
 				return date.valueOf() < now.valueOf() ? 'disabled' : '';
-			}
+			},
+      format: 'yyyy-mm-dd hh:ii',
+			pickTime: true
 		}).on('changeDate', function (ev) {
-			if (ev.date.valueOf() > checkout.date.valueOf()) {
-				var newDate = new Date(ev.date)
-				newDate.setDate(newDate.getDate() + 1);
-				checkout.update(newDate);
-			}
-			checkin.hide();
-			$('#outtime')[0].focus();
+			// if (ev.date.valueOf() > checkout.date.valueOf()) {
+			// 	var newDate = new Date(ev.date)
+			// 	newDate.setDate(newDate.getDate() + 1);
+			// 	checkout.update(newDate);
+			// }
+			// checkin.hide();
+			// $('#outtime')[0].focus();
 		}).data('datepicker');
 		var checkout = $('#outtime').fdatepicker({
 			onRender: function (date) {
 				return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
-			}
+			},
+      format: 'yyyy-mm-dd hh:ii',
+			pickTime: true
 		}).on('changeDate', function (ev) {
 			checkout.hide();
 		}).data('datepicker');
