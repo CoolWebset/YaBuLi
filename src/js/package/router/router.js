@@ -1,6 +1,5 @@
 import '../debouncedresize/jquery.debouncedresize'
 
-
 /**
  * 回到顶部
  * @return {[type]} [description]
