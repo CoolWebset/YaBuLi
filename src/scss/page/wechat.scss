@@ -31,7 +31,24 @@
     p {
       max-width: 260px;
       width    : 100%;
-      margin   : 10% auto;
+      margin   : 8% auto;
+    }
+  }
+  @include max-screen(1024px) {
+    .container {
+      display: block;
+
+      .right {
+        margin-top: 5%;
+
+        h1 {
+          font-size: 24px;
+        }
+
+        p {
+          margin: 10px auto;
+        }
+      }
     }
   }
 }
