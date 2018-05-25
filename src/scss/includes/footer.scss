@@ -5,6 +5,9 @@ footer {
     background-color: #c1c1c1;
     color           : #fff;
     font-size       : 12px;
+    @include max-screen(1024px) {
+      text-align: center;
+    }
   }
 
   .footer-main {
