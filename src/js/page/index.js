@@ -2,9 +2,22 @@ import debug from '../package/debug/debug'
 import Swiper from 'swiper';
 const videoCtrl = () => {
   $(".video_fm").click(function() {
-    $(".video_fm").hide();
-    $('video').get(0).play();
+    $(".video_fm").addClass('hide');
+    $('video').trigger("play");
+    $('video').removeClass('pause');
+    $('video').addClass('play');
   });
+  $("video").addClass('pause'); //for check pause or play add a class
+  $('video').click(function() {
+    if ($(this).hasClass('pause')) {
+
+    } else {
+      $("video").trigger("pause");
+      $(this).removeClass('play');
+      $(".video_fm").removeClass('hide');
+      $(this).addClass('pause');
+    }
+  })
 }
 const banner = () => {
   var bannerSwiper = new Swiper('.i_ban.swiper-container', {
