@@ -25,6 +25,8 @@ const banner = () => {
       el: '.i_ban .swiper-pagination',
     },
     loop: true,
+    speed: 2000,
+    autoplay: true
   });
 }
 const init = (callback) => {

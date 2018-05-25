@@ -62,7 +62,7 @@ header {
   width     : 100%;
   max-width : 1440px;
   position  : fixed;
-  z-index   : 99;
+  z-index   : 5;
   top       : 35px;
   @include css-set($height-padding);
 
