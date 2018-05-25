@@ -50,8 +50,6 @@ const piccontent = (data) => {
         this.removeAllSlides();
         this.appendSlide(data);
         $('.pc-slide').addClass('on')
-        // this.slideTo(1);
-
       },
       click: function() {
         // alert('你点了Swiper');
