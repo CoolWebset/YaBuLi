@@ -89,6 +89,7 @@ header {
           border-radius: 0;
           padding      : 5px 10px;
 
+          &.on,
           &:focus,
           &:hover {
             color     : #e4c298;

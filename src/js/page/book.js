@@ -45,7 +45,7 @@ const timeselect = () => {
 }
 
 const init = (callback) => {
-  callback(2)
+  callback(99)
   debug('book is load');
   timeselect();
   formChange();

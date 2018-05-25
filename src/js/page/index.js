@@ -28,7 +28,7 @@ const banner = () => {
   });
 }
 const init = (callback) => {
-  callback(1);
+  callback(0);
   debug('index is load');
   videoCtrl();
   banner();
