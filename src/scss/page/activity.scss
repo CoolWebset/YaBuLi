@@ -31,4 +31,36 @@
     text-align: center;
     color: #727171;
   }
+  .hd_ser{
+    padding: 5% 0;
+    position: relative;
+    .col-md-5{
+      box-sizing: border-box;
+      .hd_room{
+        p{
+          text-align: center;
+          line-height: 2em;
+          i{
+            font-size: 2em;
+            color: #bdb9bd;
+          }
+          span{
+            color: #555;
+            font-size: 0.8em;
+          }
+        }
+      }
+      h2{
+        font-size: 0.8em;
+        color: #717171;
+        letter-spacing: 3px;
+      }
+      h1{
+        font-size: 2em;
+        color: #000;
+        font-weight: bold;
+        margin-bottom: 20%;
+      }
+    }
+  }
 }
