@@ -95,6 +95,12 @@
 
     form {
       padding: 10%;
+      .btn{
+        width: 100%;
+        background: #c8ae7b;
+        border: none;
+        color: #fff;
+      }
 
       input,
       textarea {
