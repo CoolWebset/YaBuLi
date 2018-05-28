@@ -1,0 +1,79 @@
+.meet{
+  padding: 0!important;
+  .meet_ban{
+    width: 100%;
+    img{
+      width: 100%;
+      display: block;
+    }
+  }
+  .met_main{
+    width: 100%;
+    background: #f6f6f6;
+    dl{
+      width: 100%;
+      padding: 0 5%;
+      background: #fff;
+      margin-bottom: 10px;
+      dt{
+        padding: 5% 0;
+        font-size: 1.5em;
+        color: #6aa3b7;
+        i{
+          margin-right: 5px;
+        }
+      }
+      dd{
+        font-size: 1.2em;
+        padding: 5% 0;
+        border-top: 1px solid #ececec;
+        overflow: hidden;
+        label{
+          float: left;
+          font-weight: normal;
+        }
+        input{
+          float: right;
+          border: none;
+          text-align: right;
+        }
+        textarea{
+          width: 100%;
+          background: #f6f6f6;
+          border: none;
+          box-sizing: border-box;
+          padding: 3%;
+        }
+      }
+      &:last-child{
+        dd{
+          border: none;
+          padding-top: 0;
+        }
+      }
+    }
+    .meet_wz{
+      width: 100%;
+      padding: 5%;
+      h2{
+        text-align: center;
+        color: #000;
+        font-size: 2em;
+        font-weight: bold;
+      }
+      p{
+        color: #ababab;
+        font-size: 1.2em;
+        margin: 3% 0;
+      }
+      .btn{
+        width: 100%;
+        background: #68a2b8;
+        border-radius: none;
+        border: none;
+        padding: 1% 12px;
+        font-size: 1.2em;
+      }
+    }
+  }
+}
