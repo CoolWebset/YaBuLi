@@ -2,20 +2,23 @@
   .i_intro_bt {
     margin-bottom: 4%;
     text-align: center;
-
     img {
       width: 11%;
+      @include max-screen(767px) {
+        width: 28%;
+      }
     }
   }
-
   .i_intro_wz {
     max-width: 50%;
     width: 100%;
     margin: 0 auto 5%;
     text-align: center;
     color: #727171;
+    @include max-screen(767px) {
+      max-width: 80%;
+    }
   }
-
   .hd_jj {
     background-image: url("../img/wl.jpg");
     background-position: left bottom;
@@ -25,12 +28,33 @@
     .hd_lb {
       width: 50%;
       margin: 0 auto;
-
+      @include max-screen(767px) {
+        width: 80%;
+      }
+      .i_ban{
+        padding-bottom: 20px;
+      }
       .swiper-wrapper {
         .swiper-slide {
           img {
             box-sizing: border-box;
             border: 8px solid #fff;
+          }
+        }
+      }
+      .swiper-pagination{
+        bottom: 0;
+      }
+      .swiper-fy{
+        width: 25%;
+        margin: 0 auto;
+        position: relative;
+        bottom: 0;
+        margin-top: 10%;
+        .swiper-button-white{
+          background: none;
+          i{
+            color: #e4c298;
           }
         }
       }
@@ -94,6 +118,10 @@
       overflow: hidden;
       padding: 0;
       background-image: url("../img/hd_2.jpg");
+      @include max-screen(767px) {
+        position: relative;
+        height  : 350px;
+      }
     }
   }
 

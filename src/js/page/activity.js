@@ -1,11 +1,20 @@
 import debug from '../package/debug/debug'
 import Swiper from 'swiper';
-const banner = () => {
-  var bannerSwiper = new Swiper('.i_ban.swiper-container', {
-    pagination: {
-      el: '.i_ban .swiper-pagination',
-    },
+// const banner = () => {
+//   var bannerSwiper = new Swiper('.i_ban.swiper-container', {
+//     pagination: {
+//       el: '.i_ban .swiper-pagination',
+//     },
+//     loop: true,
+//   });
+// }
+const hd_pic = () => {
+  var bannerSwiper = new Swiper('.hd_lb .swiper-container', {
     loop: true,
+    navigation: {
+        nextEl: '.swiper-fy .swiper-button-next',
+        prevEl: '.swiper-fy .swiper-button-prev',
+      },
   });
 }
 const hd_three = () => {
@@ -29,7 +38,6 @@ const videoCtrl = () => {
   $("video").addClass('pause'); //for check pause or play add a class
   $('video').click(function() {
     if ($(this).hasClass('pause')) {
-
     } else {
       $("video").trigger("pause");
       $(this).removeClass('play');
@@ -39,11 +47,12 @@ const videoCtrl = () => {
   })
 }
 const init = (callback) => {
+  hd_pic();
   hd_three();
   videoCtrl();
   callback(1)
   debug('activity is load');
-  banner();
+  // banner();
 };
 const activity = {
   init: init
