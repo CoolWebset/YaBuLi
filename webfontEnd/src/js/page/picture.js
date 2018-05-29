@@ -6,21 +6,21 @@ const picshow = $('.pic-show');
 const picitem = $('.picture .item');
 const picclose = $('.pic-show .close');
 const picClick = () => {
-
-  picitem.click(function() {
+    $('body').off("click",'.picture .item').on("click",'.picture .item',function(){
     $('body').addClass('picshow');
-    fetch('http://114.115.177.23:9000/mock/11/pic')
+    let id = $(this).data('id');
+    fetch('/pictureload_'+id+'.html')
       .then(function(response) {
         return response.json()
       }).then(function(json) {
         let trs = [];
         $.each(json.data, function(n, value) {
           if (n == 0) {
-            trs.push('<div class="swiper-slide active-nav"><img src="' + value.img + '" alt=""></div>');
+            trs.push('<div class="swiper-slide active-nav"><img src="' + value + '" alt=""></div>');
           } else if ((n + 1) % 6 == 0) {
-            trs.push('<div class="swiper-slide slide6"><img src="' + value.img + '" alt=""></div>');
+            trs.push('<div class="swiper-slide slide6"><img src="' + value + '" alt=""></div>');
           } else {
-            trs.push('<div class="swiper-slide"><img src="' + value.img + '" alt=""></div>');
+            trs.push('<div class="swiper-slide"><img src="' + value + '" alt=""></div>');
           }
 
         });
@@ -36,10 +36,18 @@ const picClick = () => {
       })
 
   });
-  picclose.click(function() {
+  $('body').off("click",'.pic-show .close').on("click",'.pic-show .close',function(){
     $('body').removeClass('picshow');
   });
 
+}
+const picnavClick = () => {
+  console.log(2);
+  $('.picture .picture-inner .nav.nav-justified>li').on("click",function(){
+    console.log(1);
+    $('.picture .picture-inner .nav.nav-justified>li').removeClass('active')
+    $(this).addClass('active');
+  });
 }
 const piccontent = (data) => {
   var viewSwiper = new Swiper('.view .swiper-container', {
@@ -128,6 +136,7 @@ const init = (callback) => {
   // $('body').addClass('picshow');
   // piccontent();
   banner();
+  picnavClick();
 };
 const picture = {
   init: init
