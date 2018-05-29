@@ -74,10 +74,10 @@ const submit = () => {
       type: 1
     }, function(data) {
       if (data.status == 1) {
-        alert('预订成功！感谢您对我们的支持！');
+        alertinfo('预订成功！感谢您对我们的支持！');
         window.location.href = "/book.html"
       } else {
-        alert('预订失败！重新提交试试！');
+        alertinfo('预订失败！重新提交试试！');
       }
     })
 
@@ -91,7 +91,7 @@ const submit = () => {
     let partytime = $('#partytime').val();
     let content = $('#beizhu2').val();
     if ($.trim(name) == '') {
-      alert('姓名不能为空');
+      alertinfo('姓名不能为空');
       return false;
     }
     if ($.trim(tel) == '') {
@@ -120,10 +120,10 @@ const submit = () => {
       type: 2
     }, function(data) {
       if (data.status == 1) {
-        alert('预订成功！感谢您对我们的支持！');
+        alertinfo('预订成功！感谢您对我们的支持！');
         window.location.href = "/book.html"
       } else {
-        alert('预订失败！重新提交试试！');
+        alertinfo('预订失败！重新提交试试！');
       }
     })
   });
