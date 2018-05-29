@@ -74,8 +74,7 @@ const submit = () => {
       type: 1
     }, function(data) {
       if (data.status == 1) {
-        alertinfo('预订成功！感谢您对我们的支持！');
-        window.location.href = "/book.html"
+        alertinfo('预订成功！感谢您对我们的支持！','/book.html');
       } else {
         alertinfo('预订失败！重新提交试试！');
       }
@@ -90,26 +89,26 @@ const submit = () => {
     let partynum = $('#partynum').val();
     let partytime = $('#partytime').val();
     let content = $('#beizhu2').val();
-    if ($.trim(name) == '') {
-      alertinfo('姓名不能为空');
+    if ($.trim(partyconame) == '') {
+      alertinfo('公司名称不能为空');
       return false;
     }
-    if ($.trim(tel) == '') {
+    if ($.trim(partyname) == '') {
+      alertinfo('联系人不能为空');
+      return false;
+    }
+    if ($.trim(partytel) == '') {
       alertinfo('联系方式不能为空');
       return false;
     }
-    if ($.trim(intime) == '') {
-      alertinfo('入住时间不能为空');
+    if ($.trim(partynum) == '') {
+      alertinfo('会议人数不能为空');
       return false;
     }
-    if ($.trim(outtime) == '') {
-      alertinfo('离店日期不能为空');
+    if ($.trim(partytime) == '') {
+      alertinfo('会议时间不能为空');
       return false;
     }
-    // if ($.trim(content) == '') {
-    //   alertinfo('离店日期不能为空');
-    //   return false;
-    // }
     $.post("/sendbook.html", {
       partyconame: partyconame,
       partyname: partyname,
@@ -120,8 +119,7 @@ const submit = () => {
       type: 2
     }, function(data) {
       if (data.status == 1) {
-        alertinfo('预订成功！感谢您对我们的支持！');
-        window.location.href = "/book.html"
+        alertinfo('预订成功！感谢您对我们的支持！','/book.html');
       } else {
         alertinfo('预订失败！重新提交试试！');
       }
