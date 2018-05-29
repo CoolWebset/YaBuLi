@@ -12,6 +12,25 @@ const formChange = () => {
   })
 }
 
+/**
+ * 弹窗
+ * @param  {[type]} info [description]
+ * @param  {[type]} aurl [description]
+ * @return {[type]}      [description]
+ */
+const alertinfo = (info, aurl) => {
+  $('.alert_player').fadeIn();
+  $('.alert_player .info').html(info);
+  if (aurl === undefined) {} else {
+    $('.alert_player .queren_btn,.alert_player .bg').click(function() {
+      location.href = aurl;
+    })
+  }
+  $('.alert_player .bg,.alert_player .queren_btn').click(function() {
+    $('.alert_player').fadeOut();
+  });
+};
+
 const timeselect = () => {
   rome(intime);
   rome(outtime);
@@ -27,7 +46,7 @@ const submit = () => {
     let outtime = $('#outtime').val();
     let content = $('#beizhu').val();
     if ($.trim(name) == '') {
-      alert('姓名不能为空');
+      alertinfo('姓名不能为空');
       return false;
     }
     if ($.trim(tel) == '') {
