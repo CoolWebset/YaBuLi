@@ -7,6 +7,24 @@
       display: block;
     }
   }
+  .meet_tab{
+    width: 100%;
+    a{
+      width: 50%;
+      display: inline-block;
+      text-align: center;
+      box-sizing: border-box;
+      padding: 3%;
+      background: #fff;
+      text-decoration: none;
+      font-size: 1.5em;
+      color: #555;
+      &.on{
+        background: #e4c298;
+        color: #fff;
+      }
+    }
+  }
   .met_main{
     width: 100%;
     background: #f6f6f6;
