@@ -1,6 +1,5 @@
 import debug from '../package/debug/debug'
 import rome from 'rome'
-console.log(rome);
 const formChange = () => {
   $('.nav-tabs.nav-justified>li').click(function() {
     const i = $(this).index();
