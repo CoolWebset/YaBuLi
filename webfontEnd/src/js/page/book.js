@@ -1,9 +1,8 @@
 import debug from '../package/debug/debug'
-import fdatepicker from '../package/datepicker/js/foundation-datepicker'
-import '../package/datepicker/js/locales/foundation-datepicker.zh-CN'
-
-const formChange = () =>{
-  $('.nav-tabs.nav-justified>li').click(function(){
+import rome from 'rome'
+console.log(rome);
+const formChange = () => {
+  $('.nav-tabs.nav-justified>li').click(function() {
     const i = $(this).index();
     $('.nav-tabs.nav-justified>li').removeClass('active');
     $(this).addClass('active');
@@ -15,38 +14,107 @@ const formChange = () =>{
 }
 
 const timeselect = () => {
-  var nowTemp = new Date();
-		var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
-		var checkin = $('#intime').fdatepicker({
-			onRender: function (date) {
-				return date.valueOf() < now.valueOf() ? 'disabled' : '';
-			},
-      format: 'yyyy-mm-dd hh:ii',
-			pickTime: true
-		}).on('changeDate', function (ev) {
-			if (ev.date.valueOf() > checkout.date.valueOf()) {
-				var newDate = new Date(ev.date)
-				newDate.setDate(newDate.getDate() + 1);
-				checkout.update(newDate);
-			}
-			checkin.hide();
-			$('#outtime')[0].focus();
-		}).data('datepicker');
-		var checkout = $('#outtime').fdatepicker({
-			onRender: function (date) {
-				return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
-			},
-      format: 'yyyy-mm-dd hh:ii',
-			pickTime: true
-		}).on('changeDate', function (ev) {
-			checkout.hide();
-		}).data('datepicker');
+  rome(intime);
+  rome(outtime);
+  rome(partytime);
+}
 
+const submit = () => {
+  //客房预订
+  $('#kfydsubmit').click(function(event) {
+    let name = $('#name').val();
+    let tel = $('#tel').val();
+    let intime = $('#intime').val();
+    let outtime = $('#outtime').val();
+    let content = $('#beizhu').val();
+    if ($.trim(name) == '') {
+      alert('姓名不能为空');
+      return false;
+    }
+    if ($.trim(tel) == '') {
+      alertinfo('联系方式不能为空');
+      return false;
+    }
+    if ($.trim(intime) == '') {
+      alertinfo('入住时间不能为空');
+      return false;
+    }
+    if ($.trim(outtime) == '') {
+      alertinfo('离店日期不能为空');
+      return false;
+    }
+    // if ($.trim(content) == '') {
+    //   alertinfo('离店日期不能为空');
+    //   return false;
+    // }
+    $.post("/sendbook.html", {
+      name: name,
+      tel: tel,
+      intime: intime,
+      outtime: outtime,
+      content: content,
+      type: 1
+    }, function(data) {
+      if (data.status == 1) {
+        alert('预订成功！感谢您对我们的支持！');
+        window.location.href = "/book.html"
+      } else {
+        alert('预订失败！重新提交试试！');
+      }
+    })
+
+  });
+  // 会议预订
+  $('#hyydsubmit').click(function(event) {
+    let partyconame = $('#partyconame').val();
+    let partyname = $('#partyname').val();
+    let partytel = $('#partytel').val();
+    let partynum = $('#partynum').val();
+    let partytime = $('#partytime').val();
+    let content = $('#beizhu2').val();
+    if ($.trim(name) == '') {
+      alert('姓名不能为空');
+      return false;
+    }
+    if ($.trim(tel) == '') {
+      alertinfo('联系方式不能为空');
+      return false;
+    }
+    if ($.trim(intime) == '') {
+      alertinfo('入住时间不能为空');
+      return false;
+    }
+    if ($.trim(outtime) == '') {
+      alertinfo('离店日期不能为空');
+      return false;
+    }
+    // if ($.trim(content) == '') {
+    //   alertinfo('离店日期不能为空');
+    //   return false;
+    // }
+    $.post("/sendbook.html", {
+      partyconame: partyconame,
+      partyname: partyname,
+      partytel: partytel,
+      partynum: partynum,
+      partytime: partytime,
+      content:content,
+      type: 2
+    }, function(data) {
+      if (data.status == 1) {
+        alert('预订成功！感谢您对我们的支持！');
+        window.location.href = "/book.html"
+      } else {
+        alert('预订失败！重新提交试试！');
+      }
+    })
+  });
 }
 
 const init = (callback) => {
   callback(99)
   debug('book is load');
+  submit();
   timeselect();
   formChange();
 };
