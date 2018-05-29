@@ -57,9 +57,12 @@ const submit = () => {
   $('#kfydsubmit').click(function(event) {
     let name = $('#name').val();
     let tel = $('#tel').val();
-    let intime = $('#intime').val();
-    let outtime = $('#outtime').val();
-    let content = $('#beizhu').val();
+    let intime = $('#in_time').val();
+    let outtime = $('#out_time').val();
+    let roomnum = $('#room_num').val();
+    let adultnum = $('#adult_num').val();
+    let childrennum = $('#children_num').val();
+    let content = $('#content').val();
     if ($.trim(name) == '') {
       alertinfo('姓名不能为空');
       return false;
@@ -80,7 +83,7 @@ const submit = () => {
     //   alertinfo('离店日期不能为空');
     //   return false;
     // }
-    $.post("/sendbook.html", {
+    $.post("/addons_execute_diyform-index-sendbook.html", {
       name: name,
       tel: tel,
       intime: intime,
@@ -89,7 +92,7 @@ const submit = () => {
       type: 1
     }, function(data) {
       if (data.status == 1) {
-        alertinfo('预订成功！感谢您对我们的支持！', '/book.html');
+        alertinfo('预订成功！感谢您对我们的支持！', '/addons_execute_diyform-index-index');
       } else {
         alertinfo('预订失败！重新提交试试！');
       }
@@ -98,7 +101,7 @@ const submit = () => {
   });
   // 会议预订
   $('#hyydsubmit').click(function(event) {
-    let partyconame = $('#partyconame').val();
+    let partyconame = $('#corporate_name').val();
     let partyname = $('#partyname').val();
     let partytel = $('#partytel').val();
     let partynum = $('#partynum').val();
@@ -124,7 +127,7 @@ const submit = () => {
       alertinfo('会议时间不能为空');
       return false;
     }
-    $.post("/sendbook.html", {
+    $.post("/addons_execute_diyform-index-sendbook.html", {
       partyconame: partyconame,
       partyname: partyname,
       partytel: partytel,
@@ -134,7 +137,7 @@ const submit = () => {
       type: 2
     }, function(data) {
       if (data.status == 1) {
-        alertinfo('预订成功！感谢您对我们的支持！', '/book.html');
+        alertinfo('预订成功！感谢您对我们的支持！', '/addons_execute_diyform-index-meet');
       } else {
         alertinfo('预订失败！重新提交试试！');
       }
