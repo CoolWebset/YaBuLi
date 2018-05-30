@@ -17,21 +17,22 @@ const alertinfo = (info, aurl) => {
     $('.alert_player').fadeOut();
   });
 };
-const submit = ()=>{
+const submit = () => {
   $('#fpsubmit').click(function(event) {
     let type = $('input[name=type]:checked').val();
-    let name = $('#name').val();
+    let title = $('#title').val();
     let tel = $('#tel').val();
-    if($("#mrtt").is(':checked')){
-      let mrtt = 1;
-    }else{
-      let mrtt = 0;
+    let mrtt = 0;
+    if ($("#mrtt").is(':checked')) {
+      mrtt = 1;
+    } else {
+      mrtt = 0;
     }
     let shuihao = $('#shuihao').val();
     let address = $('#address').val();
     let khyh = $('#khyh').val();
     let yhzh = $('#yhzh').val();
-    if ($.trim(name) == '') {
+    if ($.trim(title) == '') {
       alertinfo('抬头名称不能为空');
       return false;
     }
@@ -55,19 +56,26 @@ const submit = ()=>{
       alertinfo('银行账号不能为空');
       return false;
     }
-    // if ($.trim(content) == '') {
-    //   alertinfo('离店日期不能为空');
-    //   return false;
-    // }
+    // let arr = {
+    //   type: type,
+    //   name: name,
+    //   tel: tel,
+    //   mrtt: mrtt,
+    //   shuihao: shuihao,
+    //   address: address,
+    //   khyh: khyh,
+    //   yhzh: yhzh
+    // };
+    // console.log(arr);return false;
     $.post("/addons_execute_invoiceform-index-sendbook.html", {
-      type:type,
-      name: name,
+      type: type,
+      title: title,
       tel: tel,
-      mrtt:mrtt,
+      mrtt: mrtt,
       shuihao: shuihao,
       address: address,
       khyh: khyh,
-      yhzh: yhzh,
+      yhzh: yhzh
     }, function(data) {
       if (data.status == 1) {
         alertinfo('申请成功！', '/addons_execute_invoiceform-index-index');
