@@ -1,96 +1,121 @@
-.invoice{
-  dd{
-    font-size: 1.2em;
-    padding: 5% 5%;
-    border-top: 1px solid #ececec;
-    overflow: hidden;
-    position: relative;
-    /*表单开关样式*/
-.ui-switch {
-    position: relative;
-    font-size: .16rem;
-    right:10%;
-    margin-top: -0.16rem;
-    width: 30px;
-    height: 15px;
-    line-height: 15px;
-    float: right;
-}
-.ui-switch input {
-    width: 7px;
-    height: 3px;
-    position: absolute;
-    top: 0;left: 0;
-    z-index: 2;
-    border: 0;
-    background: 0 0;
-    -webkit-appearance: none;
-    outline: 0
-}
-.ui-switch input:before {
-    content: '';
-    width: 30px;
-    height: 15px;
-    border: 1px solid #dfdfdf;
-    background-color: #fdfdfd;
-    border-radius: .2rem;
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    vertical-align: middle;
-    -webkit-box-sizing: content-box;
-    box-sizing: content-box;
-    border-color: #dfdfdf;
-    -webkit-box-shadow: #dfdfdf 0 0 0 0 inset;
-    box-shadow: #dfdfdf 0 0 0 0 inset;
-    -webkit-transition: border .4s,-webkit-box-shadow .4s;
-    transition: border .4s,box-shadow .4s;
-    -webkit-background-clip: content-box;
-    background-clip: content-box
-}
+.invoice {
+  padding         : 0 !important;
+  background-color: #f1f1f1;
 
-.ui-switch input:checked:before {
-    border-color: #64bd63;
-    -webkit-box-shadow: #64bd63 0 0 0 0.16rem inset;
-    box-shadow: #64bd63 0 0 0 0.16rem inset;
-    background-color: #64bd63;
-    transition: border .4s,box-shadow .4s,background-color 1.2s;
-    -webkit-transition: border .4s,-webkit-box-shadow .4s,background-color 1.2s;
-    background-color: #64bd63
-}
-.ui-switch input:checked:after {
-    left: .4rem
-}
-.ui-switch input:after {
-    content: '';
-    width:15px;
-    height: 15px;
-    position: absolute;
-    top: 10px;
-    left: 0;
-    -webkit-transform:translateY(-50%);
-    border-radius: 100%;
-    background-color: #fff;
-    -webkit-box-shadow: 0 0.01rem 0.03rem rgba(0,0,0,.4);
-    box-shadow: 0 0.01rem 0.03rem rgba(0,0,0,.4);
-    -webkit-transition: left .2s;
-    transition: left .2s
-}
-    label{
-      float: none;
-      font-weight: normal;
+  .met_main {
+    width     : 100%;
+    background: #f6f6f6;
+
+    dl {
+      width        : 100%;
+      padding      : 0 5%;
+      background   : #fff;
+      margin-bottom: 10px;
+
+      dt {
+        padding  : 5% 0;
+        font-size: 1.5em;
+        color    : #6aa3b7;
+
+        i {
+          margin-right: 5px;
+        }
+      }
+
+      dd {
+        font-size : 1.2em;
+        padding   : 5% 0;
+        border-top: 1px solid #ececec;
+        overflow  : hidden;
+
+        label {
+          float      : left;
+          font-weight: normal;
+        }
+
+        input {
+          float     : right;
+          border    : none;
+          text-align: right;
+          outline   : none;
+        }
+
+        textarea {
+          width     : 100%;
+          background: #f6f6f6;
+          border    : none;
+          box-sizing: border-box;
+          padding   : 3%;
+        }
+
+        &:first-child {
+          border: none;
+        }
+      }
+      // &:last-child {
+      //   dd {
+      //     border     : none;
+      //     padding-top: 0;
+      //   }
+      // }
     }
-    input{
-      float: none;
-      border: none;
-      text-align: right;
+
+    .radio-label {
+      padding: 0;
     }
-    textarea{
-      width: 100%;
-      background: #f6f6f6;
-      border: none;
-      box-sizing: border-box;
-      padding: 3%;
+
+    input[name=type] + label span {
+      width       : 15.58px;
+      margin-right: 5px;
+    }
+
+    input[name=type]:checked + label span:before {
+      content: "\f046";
+    }
+
+    .radio-change {
+      .radio {
+        width        : 2.5em;
+        height       : 1.2em;
+        box-shadow   : 0 0 2px #000;
+        margin       : 0 2px 0 0;
+        border-radius: 50px;
+        float        : right;
+        position     : relative;
+
+        span {
+          width           : 1.2em;
+          height          : 1.2em;
+          border-radius   : 100%;
+          box-shadow      : 0 0 2px #000;
+          background-color: #fff;
+          float           : left;
+        }
+      }
+
+      input:checked + .radio {
+        background-color: #e4c298;
+
+        span {
+          float: right;
+        }
+      }
+    }
+
+    .info {
+      text-align: center;
+      display   : block;
+      color     : rgb(216,33,13);
+      width     : 100%;
+    }
+
+    .btn {
+      width        : 100%;
+      background   : #68a2b8;
+      border-radius: none;
+      border       : none;
+      padding      : 1% 12px;
+      font-size    : 1.2em;
     }
   }
 }
