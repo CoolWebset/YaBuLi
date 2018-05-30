@@ -46,6 +46,16 @@ const timeselect = () => {
     maxDate: new Date(2030, 7, 30, 15, 44),
     stepMinute: 1
   });
+  $('#partytime').mobiscroll().datetime({
+    theme: theme,
+    mode: mode,
+    display: display,
+    lang: lang,
+    dateFormat: "yyyy-mm-dd",
+    minDate: new Date(2000, 3, 10, 9, 22),
+    maxDate: new Date(2030, 7, 30, 15, 44),
+    stepMinute: 1
+  });
 
   // rome(intime);
   // rome(outtime);
