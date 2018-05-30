@@ -98,6 +98,9 @@ const submit = () => {
       tel: tel,
       intime: intime,
       outtime: outtime,
+      roomnum: roomnum,
+      adultnum: adultnum,
+      childrennum: childrennum,
       content: content,
       type: 1
     }, function(data) {
