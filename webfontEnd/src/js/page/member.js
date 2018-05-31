@@ -1,4 +1,5 @@
 import debug from '../package/debug/debug'
+// import mobiscroll from '../package/mobiscroll/mobiscroll.custom.min'
 /**
  * 弹窗
  * @param  {[type]} info [description]
@@ -17,6 +18,22 @@ const alertinfo = (info, aurl) => {
     $('.alert_player').fadeOut();
   });
 };
+// const timeselect = () => {
+//   var theme = "ios";
+//   var mode = "scroller";
+//   var display = "bottom";
+//   var lang = "zh";
+//   $('#birsthday').mobiscroll().datetime({
+//     theme: theme,
+//     mode: mode,
+//     display: display,
+//     lang: lang,
+//     dateFormat: "yyyy-mm-dd",
+//     minDate: new Date(2000, 3, 10, 9, 22),
+//     maxDate: new Date(2030, 7, 30, 15, 44),
+//     stepMinute: 1
+//   });
+// }
 const submit = () => {
   $('#membersubmit').click(function(event) {
     let name = $('#name').val();
@@ -27,28 +44,20 @@ const submit = () => {
       alertinfo('姓名不能为空');
       return false;
     }
-    if ($.trim(shuihao) == '') {
-      alertinfo('税号不能为空');
-      return false;
-    }
-    if ($.trim(birsthday) == '') {
-      alertinfo('生日不能为空');
-      return false;
-    }
     if ($.trim(phone) == '') {
       alertinfo('手机号码不能为空');
       return false;
     }
-    $.post("/addons_execute_member-index-sendbook.html", {
+    $.post("/addons_execute_memberform-index-sendbook.html", {
       name: name,
       sex: sex,
       birsthday: birsthday,
       phone: phone
     }, function(data) {
       if (data.status == 1) {
-        alertinfo('申请成功！', '/addons_execute_member-index-index');
+        alertinfo('注册成功！', 'https://mp.weixin.qq.com/s?__biz=MjM5MTU1MzEzMw==&mid=504052507&idx=1&sn=5a8a33430e1e3a5e16e951f6ea8481dc&chksm=3d4c58190a3bd10fa23dfb2070640e166ca47b81bb80c645478a08e15e13d251f2ee8dd049fe&mpshare=1&scene=1&srcid=0531cxzxOIICz5f3hdYe1cGg#rd');
       } else {
-        alertinfo('申请失败！重新提交试试！');
+        alertinfo('注册失败！重新提交试试！');
       }
     })
 
@@ -58,6 +67,7 @@ const init = (callback) => {
   callback(9999)
   debug('member is load');
   submit();
+  // timeselect();
 };
 const member = {
   init: init

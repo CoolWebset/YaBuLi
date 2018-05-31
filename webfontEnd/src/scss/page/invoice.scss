@@ -64,12 +64,26 @@
       padding: 0;
     }
 
+    input[type=checkbox],
+    input[type=radio] {
+      display: none;
+    }
+
     input[name=type] + label span {
       width       : 15.58px;
       margin-right: 5px;
     }
 
     input[name=type]:checked + label span:before {
+      content: "\f046";
+    }
+
+    input[name=sex] + label span {
+      width       : 15.58px;
+      margin-right: 5px;
+    }
+
+    input[name=sex]:checked + label span:before {
       content: "\f046";
     }
 

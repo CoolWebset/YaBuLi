@@ -1,6 +1,11 @@
 .meet {
   padding: 0;
 
+  input[type=checkbox],
+  input[type=radio] {
+    display: none;
+  }
+
   .meet_ban {
     width: 100%;
 
