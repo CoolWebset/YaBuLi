@@ -1,5 +1,5 @@
 .meet {
-  padding: 0em!important;
+  padding: 0;
 
   .meet_ban {
     width: 100%;
@@ -21,7 +21,7 @@
       padding        : 3%;
       background     : #fff;
       text-decoration: none;
-      font-size      : 1.5em;
+      font-size      : 1.2em;
       color          : #555;
 
       &.on {
@@ -43,7 +43,7 @@
 
       dt {
         padding  : 5% 0;
-        font-size: 1.5em;
+        font-size: 1.2em;
         color    : #6aa3b7;
 
         i {
@@ -52,7 +52,7 @@
       }
 
       dd {
-        font-size : 1.2em;
+        font-size : 1em;
         padding   : 5% 0;
         border-top: 1px solid #ececec;
         overflow  : hidden;
@@ -93,13 +93,13 @@
       h2 {
         text-align : center;
         color      : #000;
-        font-size  : 2em;
+        font-size  : 1.5em;
         font-weight: bold;
       }
 
       p {
         color    : #ababab;
-        font-size: 1.2em;
+        font-size: 1em;
         margin   : 3% 0;
       }
 

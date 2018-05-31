@@ -165,8 +165,8 @@ const init = (callback) => {
   timeselect();
 };
 
-const book = {
+const meet = {
   init: init
 };
 
-export default book;
+export default meet;

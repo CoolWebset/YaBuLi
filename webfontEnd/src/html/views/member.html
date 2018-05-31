@@ -1,0 +1,45 @@
+<% var data = {
+  title: "首页"
+}; %>
+  <%= _.template(require('../includes/header.html'))(data) %>
+    <main>
+      <article class="invoice" data-main="member">
+        <section class="main-container business index-inner">
+          <div class="met_main">
+            <dl>
+              <dd>
+                <label for="name">您的姓名</label>
+                <input id="name" type="text" name="" value="" placeholder="请填写您的姓名">
+              </dd>
+              <dd>
+                <label for="">您的性別</label>
+                <div class="col-xs-5" style="padding:0; float:right">
+                  <div class="col-xs-6 radio-label"  >
+                    <input id="sex1" type="radio" name="sex" value="1" checked >
+                    <label for="sex1" style="float:right;"><span class="fa fa-square-o"></span>男</label>
+                  </div>
+                  <div class="col-xs-6 radio-label"  >
+                    <input id="sex2" type="radio" name="sex" value="2" >
+                    <label for="sex2" style="float:right;"><span class="fa fa-square-o"></span>女</label>
+                  </div>
+                </div>
+              </dd>
+              <dd>
+                <label for="birsthday">生日</label>
+                <input id="birsthday" type="text" name="" value="" placeholder="请选择您的生日">
+              </dd>
+              <dd>
+                <label for="phone">您的手机</label>
+                <input id="phone" type="text" name="" value="" placeholder="请填写您的手机">
+              </dd>
+              <dd><button type="submit" id="membersubmit" class="btn btn-primary">提交</button></dd>
+            </dl>
+          </div>
+        </section>
+      </article>
+    </main>
+    <script src="js/bundle.js"></script>
+
+    </body>
+
+    </html>

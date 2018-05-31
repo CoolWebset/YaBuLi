@@ -1,4 +1,5 @@
 import debug from '../package/debug/debug'
+import mobiscroll from '../package/mobiscroll/mobiscroll.custom.min'
 /**
  * 弹窗
  * @param  {[type]} info [description]
@@ -17,6 +18,23 @@ const alertinfo = (info, aurl) => {
     $('.alert_player').fadeOut();
   });
 };
+
+const timeselect = () => {
+  var theme = "ios";
+  var mode = "scroller";
+  var display = "bottom";
+  var lang = "zh";
+  $('#birsthday').mobiscroll().datetime({
+    theme: theme,
+    mode: mode,
+    display: display,
+    lang: lang,
+    dateFormat: "yyyy-mm-dd",
+    minDate: new Date(2000, 3, 10, 9, 22),
+    maxDate: new Date(2030, 7, 30, 15, 44),
+    stepMinute: 1
+  });
+}
 const submit = () => {
   $('#fpsubmit').click(function(event) {
     let type = $('input[name=type]:checked').val();
@@ -90,6 +108,7 @@ const init = (callback) => {
   callback(9999)
   debug('invoice is load');
   submit();
+  timeselect();
 };
 const invoice = {
   init: init
