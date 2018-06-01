@@ -35,7 +35,7 @@ const alertinfo = (info, aurl) => {
 //   });
 // }
 const submit = () => {
-  $('#membersubmit').click(function(event) {
+  $('#membersubmit').on("click",function(){
     let name = $('#name').val();
     let sex = $('input[name=sex]:checked').val();
     let birsthday = $('#birsthday').val();
