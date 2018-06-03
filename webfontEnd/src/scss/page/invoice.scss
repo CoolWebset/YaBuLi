@@ -1,0 +1,135 @@
+.invoice {
+  padding         : 0 !important;
+  background-color: #f1f1f1;
+
+  .met_main {
+    width     : 100%;
+    background: #f6f6f6;
+
+    dl {
+      width        : 100%;
+      padding      : 0 5%;
+      background   : #fff;
+      margin-bottom: 10px;
+
+      dt {
+        padding  : 5% 0;
+        font-size: 1.2em;
+        color    : #6aa3b7;
+
+        i {
+          margin-right: 5px;
+        }
+      }
+
+      dd {
+        font-size : 1em;
+        padding   : 5% 0;
+        border-top: 1px solid #ececec;
+        overflow  : hidden;
+
+        label {
+          float      : left;
+          font-weight: normal;
+        }
+
+        input {
+          float     : right;
+          border    : none;
+          text-align: right;
+          outline   : none;
+        }
+
+        textarea {
+          width     : 100%;
+          background: #f6f6f6;
+          border    : none;
+          box-sizing: border-box;
+          padding   : 3%;
+        }
+
+        &:first-child {
+          border: none;
+        }
+      }
+      // &:last-child {
+      //   dd {
+      //     border     : none;
+      //     padding-top: 0;
+      //   }
+      // }
+    }
+
+    .radio-label {
+      padding: 0;
+    }
+
+    input[type=checkbox],
+    input[type=radio] {
+      display: none;
+    }
+
+    input[name=type] + label span {
+      width       : 15.58px;
+      margin-right: 5px;
+    }
+
+    input[name=type]:checked + label span:before {
+      content: "\f046";
+    }
+
+    input[name=sex] + label span {
+      width       : 15.58px;
+      margin-right: 5px;
+    }
+
+    input[name=sex]:checked + label span:before {
+      content: "\f046";
+    }
+
+    .radio-change {
+      .radio {
+        width        : 2.5em;
+        height       : 1.2em;
+        box-shadow   : 0 0 2px #000;
+        margin       : 0 2px 0 0;
+        border-radius: 50px;
+        float        : right;
+        position     : relative;
+
+        span {
+          width           : 1.2em;
+          height          : 1.2em;
+          border-radius   : 100%;
+          box-shadow      : 0 0 2px #000;
+          background-color: #fff;
+          float           : left;
+        }
+      }
+
+      input:checked + .radio {
+        background-color: #e4c298;
+
+        span {
+          float: right;
+        }
+      }
+    }
+
+    .info {
+      text-align: center;
+      display   : block;
+      color     : rgb(216,33,13);
+      width     : 100%;
+    }
+
+    .btn {
+      width        : 100%;
+      background   : #68a2b8;
+      border-radius: none;
+      border       : none;
+      padding      : 1% 12px;
+      font-size    : 1.2em;
+    }
+  }
+}

@@ -2,70 +2,84 @@
   title: "首页"
 }; %>
   <%= _.template(require('../includes/header.html'))(data) %>
-  <main>
-    <article class="meet" data-main="meet">
-      <section class="main-container business index-inner">
-        <div class="meet_ban">
-          <img src="img/meet_1.jpg" alt="">
-        </div>
-        <div class="met_main">
-          <dl>
-            <dt>
+    <main>
+      <article class="invoice" data-main="invoice">
+        <section class="main-container business index-inner">
+          <div class="met_main">
+            <dl>
+              <!-- <dt>
               <i class="fa fa-user-circle-o"></i><span>预订人信息</span>
-            </dt>
-            <dd>
-              <label for="meet_name">您的姓名</label>
-              <input id="meet_name" type="text" name="" value="" placeholder="您的姓名">
-            </dd>
-            <dd>
-              <label for="meet_phone">您的手机</label>
-              <input id="meet_phone" type="text" name="" value="" placeholder="您的手机">
-            </dd>
-          </dl>
-          <dl>
-            <dt>
-              <i class="fa fa-calendar"></i><span>入驻信息</span>
-            </dt>
-            <dd>
-              <label for="meet_indate">入驻日期</label>
-              <input id="meet_indate" type="text" name="" value="" placeholder="请选择入驻日期">
-            </dd>
-            <dd>
-              <label for="meet_godate">退房日期</label>
-              <input id="meet_godate" type="text" name="" value="" placeholder="请选择退房日期">
-            </dd>
-            <dd>
-              <label for="meet_roomnum">房间数量</label>
-              <input id="meet_roomnum" type="text"  onkeyup="value=value.replace(/[^\d]/g,'')" name="" value="" placeholder="房间数量">
-            </dd>
-            <dd>
-              <label for="meet_peo">成人人数</label>
-              <input id="meet_peo" type="text"  onkeyup="value=value.replace(/[^\d]/g,'')" name="" value="" placeholder="成人人数">
-            </dd>
-            <dd>
-              <label for="meet_child">儿童人数（12岁以下）</label>
-              <input id="meet_child" type="text"  onkeyup="value=value.replace(/[^\d]/g,'')" name="" value="" placeholder="儿童人数">
-            </dd>
-          </dl>
-          <dl>
-            <dt>
-              <i class="fa fa-exclamation-circle"></i><span>备注</span>
-            </dt>
-            <dd>
-              <textarea name="" id="" cols="30" rows="10" placeholder="请输入备注信息"></textarea>
-            </dd>
-          </dl>
-          <div class="meet_wz">
-            <h2>温馨提示</h2>
-            <p>信息提交后，我们会尽快联系您。您也可以直接拨打电话0451-53989898进行询问。</p>
-            <button type="submit" class="btn btn-primary">提交</button>
+              </dt> -->
+              <dd>
+                <div class="col-xs-6 radio-label">
+                  <input id="type1" type="radio" name="type" value="1" checked >
+                  <label for="type1"><span class="fa fa-square-o"></span>增专票</label>
+                </div>
+                <div class="col-xs-6 radio-label">
+                  <input id="type2" type="radio" name="type" value="2" >
+                  <label for="type2"><span class="fa fa-square-o"></span>增普票</label>
+                </div>
+              </dd>
+              <dd>
+                <label for="name">名称</label>
+                <input id="name" type="text" name="" value="" placeholder="请填写准确的抬头名称">
+              </dd>
+              <dd class="radio-change">
+                <label for="name">默认抬头</label>
+                <input type="checkbox" name="mrtt" id="mrtt" value="">
+                <label for="mrtt" class="radio">
+                  <span></span>
+                </label>
+              </dd>
+            </dl>
           </div>
-        </div>
-      </section>
-    </article>
-  </main>
-  <script src="js/bundle.js"></script>
+          <div class="met_main">
+            <dl>
+              <dd>
+                <label for="shuihao">税号</label>
+                <input id="shuihao" type="text" name="" value="" style="width: 300px;" placeholder="纳税人识别号或统一社会信用代码">
+              </dd>
+              <dd>
+                <label for="address">单位地址</label>
+                <input id="address" type="text" name="" value="" placeholder="收票单位注册地址">
+              </dd>
+              <dd>
+                <label for="tel">电话号码</label>
+                <input id="tel" type="text" name="" value="" placeholder="输入公司电话号码">
+              </dd>
+              <dd>
+                <label for="khyh">开户银行</label>
+                <input id="khyh" type="text" name="" value="" placeholder="收票单位开户银行">
+              </dd>
+              <dd>
+                <label for="yhzh">银行账号</label>
+                <input id="yhzh" type="text" name="" value="" placeholder="收票单位银行账号">
+              </dd>
+              <dd>
+                <span class="info">
+                  建议全部填写，以便开具增值税专用发票
+                </span>
+              </dd>
+            </dl>
+          </div>
+          <div class="met_main">
+            <div class="content">
+              <dl>
+                <dd>
+                  <br/> 温馨提示：
+                  <br/>
+                  <br/> 1.增专票：为增值税“专用”发票
+                  <br/> 2.增普票：为增值税“普通”发票
+                </dd>
+                <dd><button type="submit" id="fpsubmit" class="btn btn-primary">提交</button></dd>
+              </dl>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+    <script src="js/bundle.js"></script>
 
-</body>
+    </body>
 
-</html>
+    </html>

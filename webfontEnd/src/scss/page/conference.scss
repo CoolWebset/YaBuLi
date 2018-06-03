@@ -1,0 +1,108 @@
+.conference{
+  .confer_h {
+    text-align: center;
+    padding: 1% 0;
+    background: #212430;
+    color: #e4c298;
+  }
+
+  .confer_hy {
+    text-align: center;
+    margin-top: 3%;
+    margin-bottom: 5%;
+
+    h2 {
+      text-align: center;
+      font-size: 1.4em;
+      color: #b09b48;
+
+      span {
+        padding-bottom: 3px;
+        border-bottom: 2px solid #b09b48;
+      }
+    }
+
+    .i_video_bt {
+      text-align: center;
+      margin: 3% 0;
+
+      img {
+        width: 28%;
+        @include max-screen(996px) {
+          width: 35%;
+        }
+      }
+    }
+
+    p {
+      color: #727171;
+    }
+  }
+
+  .confer_main {
+    position: relative;
+    overflow: hidden;
+    .row{ position: relative; margin-bottom: 1.8%;}
+    .confer_main_l {
+      background-size: cover;
+      background-position: 50%;
+      height: 100%;
+      position: absolute;
+      left:   0;
+      overflow: hidden;
+      padding: 0;
+
+      @include max-screen(996px) {
+        position: relative;
+        height  : 350px;
+      }
+    }
+
+    .confer_main_r {
+      float: right;
+      padding-left: 10px;
+      @include max-screen(996px) {
+        padding-left: 0;
+        width: 100%;
+        padding-right: 0;
+      }
+      .confer_main_rl{
+        width: 100%;
+        box-sizing: border-box;
+        border: 1px solid #b09b48;
+        padding: 3% 5%;
+        dl{
+          dt{
+            h3 {
+              font-size: 1.4em;
+              color: #b09b48;
+              font-weight: bold;
+              margin-bottom: 5%;
+              span {
+                padding-bottom: 3px;
+                border-bottom: 2px solid #b09b48;
+              }
+            }
+          }
+          dd{
+            h4{
+              font-size: 1em;
+              font-weight: bold;
+              color: #727171;
+              margin-bottom: 1.5%;
+            }
+            table{
+              color: #727171;
+              tr{
+                display: inline-block;
+                &:first-child{
+                  margin-bottom: 3px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

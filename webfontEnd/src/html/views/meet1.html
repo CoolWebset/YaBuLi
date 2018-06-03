@@ -1,0 +1,66 @@
+<% var data = {
+  title: "首页"
+}; %>
+  <%= _.template(require('../includes/header.html'))(data) %>
+    <main>
+      <article class="meet" data-main="meet">
+        <section class="main-container business index-inner">
+          <div class="meet_ban">
+            <img src="img/meet_1.jpg" alt="">
+          </div>
+          <div class="meet_tab">
+            <a href="meet.html">客房预订</a><a href="meet1.html" class="on">会议预订</a>
+          </div>
+          <div class="met_main">
+            <dl>
+              <dt>
+              <i class="fa fa-user-circle-o"></i><span>预订人信息</span>
+            </dt>
+              <dd>
+                <label for="corporate_name">公司名称</label>
+                <input id="corporate_name" type="text" name="" value="" placeholder="公司名称">
+              </dd>
+              <dd>
+                <label for="name">联系人</label>
+                <input id="name" type="text" name="" value="" placeholder="联系人">
+              </dd>
+              <dd>
+                <label for="tel">联系方式</label>
+                <input id="tel" type="text" name="" value="" placeholder="请输入手机号码">
+              </dd>
+            </dl>
+            <dl>
+              <dt>
+              <i class="fa fa-calendar"></i><span>会议信息</span>
+            </dt>
+              <dd>
+                <label for="meet_num">会议人数</label>
+                <input id="meet_num" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" name="" value="" placeholder="会议人数">
+              </dd>
+              <dd>
+                <label for="meeting_time">会议时间</label>
+                <input id="meeting_time" type="text" name="" value="" placeholder="请选择入驻日期">
+              </dd>
+            </dl>
+            <dl>
+              <dt>
+              <i class="fa fa-exclamation-circle"></i><span>备注</span>
+            </dt>
+              <dd>
+                <textarea name="" id="content" cols="30" rows="10" placeholder="请输入备注信息"></textarea>
+              </dd>
+            </dl>
+            <div class="meet_wz">
+              <h2>温馨提示</h2>
+              <p>信息提交后，我们会尽快联系您。您也可以直接拨打电话0451-53989898进行询问。</p>
+              <button type="submit" id="hyydsubmit" class="btn btn-primary">提交</button>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+    <script src="js/bundle.js"></script>
+
+    </body>
+
+    </html>

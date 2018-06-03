@@ -62,3 +62,104 @@ footer {
     }
   }
 }
+
+.fixed {
+  z-index         : 9;
+  position        : fixed;
+  right           : 0;
+  top             : 0;
+  height          : 100%;
+  width           : 44px;
+  background-color: #000;
+  color           : #fff;
+  text-align      : center;
+
+  .inner {
+    width: 100%;
+
+    .qrcode {
+      position: relative;
+
+      .fa-qrcode {
+        font-size: 20px;
+        cursor   : pointer;
+      }
+
+      .erw {
+        position  : absolute;
+        width     : 100px;
+        height    : 100px;
+        max-width : 100px;
+        top       : 50%;
+        left      : -111px;
+        margin-top: -50px;
+        visibility: hidden;
+        opacity   : 0;
+        z-index   : -1;
+        transition: $tr4;
+      }
+
+      &:hover {
+        .erw {
+          visibility: visible;
+          opacity   : 1;
+          z-index   : 1;
+          transition: $tr4;
+        }
+      }
+    }
+
+    .lyd {
+      margin-bottom: 20px;
+      cursor       : pointer;
+      position     : relative;
+
+      .tan {
+        position        : absolute;
+        top             : 50%;
+        left            : -210px;
+        background-color: rgba(0,0,0,0.5);
+        width           : 200px;
+        height          : 80px;
+        padding         : 20px 0;
+        z-index         : 1;
+        margin-top      : -40px;
+        visibility      : hidden;
+        opacity         : 0;
+        z-index         : -1;
+        transition      : $tr4;
+
+        &:before {
+          content      : "";
+          position     : absolute;
+          right        : -10px;
+          top          : 50%;
+          margin-top   : -5px;
+          display      : block;
+          width        : 0;
+          height       : 0;
+          border-top   : 5px solid transparent;
+          border-left  : 10px solid rgba(0,0,0,0.5);
+          border-bottom: 5px solid transparent;
+        }
+
+        p {
+          padding: 0;
+          margin : 0;
+        }
+      }
+
+      &:hover {
+        .tan {
+          visibility: visible;
+          opacity   : 1;
+          z-index   : 1;
+          transition: $tr4;
+        }
+      }
+    }
+  }
+  @media (max-width: 1024px) {
+    display: none!important;
+  }
+}

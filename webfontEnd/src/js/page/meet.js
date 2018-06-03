@@ -1,16 +1,6 @@
 import debug from '../package/debug/debug'
-import rome from 'rome'
-const formChange = () => {
-  $('.nav-tabs.nav-justified>li').click(function() {
-    const i = $(this).index();
-    $('.nav-tabs.nav-justified>li').removeClass('active');
-    $(this).addClass('active');
-    $('.book-tab').removeClass('active');
-    $('.book-tab').eq(i).addClass('active');
-    $('.book .bg .bg').removeClass('active');
-    $('.book .bg .bg').eq(i).addClass('active');
-  })
-}
+import mobiscroll from '../package/mobiscroll/mobiscroll.custom.min'
+
 
 /**
  * 弹窗
@@ -32,9 +22,44 @@ const alertinfo = (info, aurl) => {
 };
 
 const timeselect = () => {
-  rome(intime);
-  rome(outtime);
-  rome(partytime);
+  var theme = "ios";
+  var mode = "scroller";
+  var display = "bottom";
+  var lang = "zh";
+  $('#in_time').mobiscroll().datetime({
+    theme: theme,
+    mode: mode,
+    display: display,
+    lang: lang,
+    dateFormat: "yyyy-mm-dd",
+    minDate: new Date(2000, 3, 10, 9, 22),
+    maxDate: new Date(2030, 7, 30, 15, 44),
+    stepMinute: 1
+  });
+  $('#out_time').mobiscroll().datetime({
+    theme: theme,
+    mode: mode,
+    display: display,
+    lang: lang,
+    dateFormat: "yyyy-mm-dd",
+    minDate: new Date(2000, 3, 10, 9, 22),
+    maxDate: new Date(2030, 7, 30, 15, 44),
+    stepMinute: 1
+  });
+  $('#partytime').mobiscroll().datetime({
+    theme: theme,
+    mode: mode,
+    display: display,
+    lang: lang,
+    dateFormat: "yyyy-mm-dd",
+    minDate: new Date(2000, 3, 10, 9, 22),
+    maxDate: new Date(2030, 7, 30, 15, 44),
+    stepMinute: 1
+  });
+
+  // rome(intime);
+  // rome(outtime);
+  // rome(partytime);
 }
 
 const submit = () => {
@@ -42,9 +67,12 @@ const submit = () => {
   $('#kfydsubmit').click(function(event) {
     let name = $('#name').val();
     let tel = $('#tel').val();
-    let intime = $('#intime').val();
-    let outtime = $('#outtime').val();
-    let content = $('#beizhu').val();
+    let intime = $('#in_time').val();
+    let outtime = $('#out_time').val();
+    let roomnum = $('#room_num').val();
+    let adultnum = $('#adult_num').val();
+    let childrennum = $('#children_num').val();
+    let content = $('#content').val();
     if ($.trim(name) == '') {
       alertinfo('姓名不能为空');
       return false;
@@ -65,16 +93,19 @@ const submit = () => {
     //   alertinfo('离店日期不能为空');
     //   return false;
     // }
-    $.post("/sendbook.html", {
+    $.post("/addons_execute_diyform-index-sendbook.html", {
       name: name,
       tel: tel,
       intime: intime,
       outtime: outtime,
+      roomnum: roomnum,
+      adultnum: adultnum,
+      childrennum: childrennum,
       content: content,
       type: 1
     }, function(data) {
       if (data.status == 1) {
-        alertinfo('预订成功！感谢您对我们的支持！','/book.html');
+        alertinfo('预订成功！感谢您对我们的支持！', '/addons_execute_diyform-index-index');
       } else {
         alertinfo('预订失败！重新提交试试！');
       }
@@ -83,7 +114,7 @@ const submit = () => {
   });
   // 会议预订
   $('#hyydsubmit').click(function(event) {
-    let partyconame = $('#partyconame').val();
+    let partyconame = $('#corporate_name').val();
     let partyname = $('#partyname').val();
     let partytel = $('#partytel').val();
     let partynum = $('#partynum').val();
@@ -109,17 +140,17 @@ const submit = () => {
       alertinfo('会议时间不能为空');
       return false;
     }
-    $.post("/sendbook.html", {
+    $.post("/addons_execute_diyform-index-sendbook.html", {
       partyconame: partyconame,
       partyname: partyname,
       partytel: partytel,
       partynum: partynum,
       partytime: partytime,
-      content:content,
+      content: content,
       type: 2
     }, function(data) {
       if (data.status == 1) {
-        alertinfo('预订成功！感谢您对我们的支持！','/book.html');
+        alertinfo('预订成功！感谢您对我们的支持！', '/addons_execute_diyform-index-meet');
       } else {
         alertinfo('预订失败！重新提交试试！');
       }
@@ -129,14 +160,13 @@ const submit = () => {
 
 const init = (callback) => {
   callback(99)
-  debug('book is load');
+  debug('meet is load');
   submit();
   timeselect();
-  formChange();
 };
 
-const book = {
+const meet = {
   init: init
 };
 
-export default book;
+export default meet;
