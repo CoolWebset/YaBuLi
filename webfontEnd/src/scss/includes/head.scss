@@ -39,6 +39,9 @@ $nav-top: (
   position   : fixed;
   top        : 0;
   z-index    : 99;
+  .col-md-12{
+    padding-right: 0;
+  }
 
   p {
     font-size    : 14px;

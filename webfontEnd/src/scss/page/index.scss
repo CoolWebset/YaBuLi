@@ -1,7 +1,14 @@
 .i_ban {
   width: 100%;
-
   .swiper-slide {
+    background-size: cover;
+    background-position: 50%;
+    height: 100%;
+    overflow: hidden;
+    padding-bottom: 34%;
+    @include max-screen(767px) {
+      padding-bottom: 50%;
+    }
     img {
       display   : block;
       width     : 100%;
@@ -13,7 +20,6 @@
 .i_about {
   .i_about_by {
     text-align: center;
-
     img {
       width: 30%;
     }
@@ -34,6 +40,9 @@
     color     : #727171;
     text-align: center;
     line-height: 2em;
+    @include max-screen(767px) {
+      max-width : 90%;
+    }
   }
 }
 
