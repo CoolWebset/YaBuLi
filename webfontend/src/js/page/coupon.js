@@ -29,8 +29,8 @@ const timeselect = () => {
     display: display,
     lang: lang,
     dateFormat: "yyyy-mm-dd",
-    minDate: new Date(2000, 3, 10, 9, 22),
-    maxDate: new Date(2030, 7, 30, 15, 44),
+    minDate: new Date(1800, 3, 10),
+    maxDate: new Date(2030, 7, 30),
     stepMinute: 1
   });
 
@@ -40,8 +40,8 @@ const timeselect = () => {
     display: display,
     lang: lang,
     dateFormat: "yyyy-mm-dd",
-    minDate: new Date(2000, 3, 10, 9, 22),
-    maxDate: new Date(2030, 7, 30, 15, 44),
+    minDate: new Date(1800, 3, 10),
+    maxDate: new Date(2030, 7, 30),
     stepMinute: 1
   });
 }
