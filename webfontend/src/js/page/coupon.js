@@ -89,7 +89,7 @@ const submit = () => {
       auditor:auditor
     }, function(data) {
       if (data.status == 1) {
-        alertinfo('提交成功！');
+        alertinfo('提交成功！','http://wx.hrbkcwl.com/app/index.php?i=36&c=entry&m=ewei_shopv2&do=mobile&r=sale.coupon.detail&id=105');
       } else {
         alertinfo('注册失败！重新提交试试！');
       }
